@@ -46,9 +46,7 @@
                     "module",
                     "/^@shared/",
                     [
-                        "parent",
-                        "sibling",
-                        "index"
+                        "parent", "sibling","index"
                     ]
                 ],
                 "alphabetize": {
