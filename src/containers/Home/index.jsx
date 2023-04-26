@@ -1,19 +1,34 @@
+import { useState, useEffect } from 'react';
+
 import api from '../../services/api';
+import { Background } from './styles';
 
 function Home() {
-  async function getMovies() {
-    const dados = await api.get('movie/popular');
+  const [movie, setMovie] = useState();
 
-    console.log(dados);
-  }
+  useEffect(() => {
+    async function getMovies() {
+      const {
+        data: { results }
+      } = await api.get('movie/popular');
 
-  getMovies();
+      setMovie(results[1]);
+    }
+    getMovies();
+  }, []);
 
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Essa é a home</p>
-    </div>
+    <>
+      {movie && (
+        <Background
+          img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+        >
+          <h1>{movie.title}</h1>
+          <p>{movie.overview}</p>
+        </Background>
+      )}
+      ;
+    </>
   );
 }
 
