@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button';
+import Slider from '../../components/Slider';
 import api from '../../services/api';
 import {
   Background,
@@ -28,7 +29,7 @@ function Home() {
         data: { results }
       } = await api.get('movie/top_rated');
 
-      setTopMovies(results[1]);
+      setTopMovies(results);
     }
 
     getTopMovies();
@@ -60,6 +61,7 @@ function Home() {
           </Container>
         </Background>
       )}
+      {topMovies && <Slider info={topMovies} title={'Top Filmes'} />}
     </>
   );
 }
