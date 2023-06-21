@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 import Slider from '../../components/Slider';
 import api from '../../services/api';
+import { getImages } from '../../utils/getImages';
 import {
   Background,
   Container,
@@ -21,7 +22,7 @@ function Home() {
         data: { results }
       } = await api.get('movie/popular');
 
-      setMovie(results[1]);
+      setMovie(results[0]);
     }
 
     async function getTopMovies() {
@@ -39,9 +40,7 @@ function Home() {
   return (
     <>
       {movie && (
-        <Background
-          img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-        >
+        <Background img={`${getImages(movie.backdrop_path)}`}>
           <Container>
             <Info>
               <h1>{movie.title}</h1>
