@@ -11,13 +11,12 @@ const scale = keyframes`
 `;
 
 export const Background = styled.div`
-  background-image: url(${(props) => props.img});
-  height: 100vh;
+  background-image: url(${(props) => props.image});
+  height: 50vh;
   background-position: center;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-repeat: no-repeat;
+  position: relative;
 
   &::before {
     content: '';
@@ -25,8 +24,8 @@ export const Background = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background-color: (0, 0, 0, 0.5);
   }
 
   &::after {
@@ -39,47 +38,26 @@ export const Background = styled.div`
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   }
 `;
-
 export const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   height: 100%;
   max-width: 1500px;
+  margin-top: -100px;
 `;
 
-export const Info = styled.div`
-  z-index: 2;
+export const Cover = styled.div`
   padding: 20px;
-  width: 50%;
-
-  h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  p {
-    font-size: 20px;
-    font-weight: 500;
-    color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-`;
-
-export const ContainerButtons = styled.div`
   display: flex;
-  gap: 20px;
-  margin-top: 30px;
-`;
-
-export const Poster = styled.div`
+  align-items: flex-start;
+  height: 100%;
   z-index: 2;
 
   img {
-    width: 400px;
+    width: 450px;
     border-radius: 30px;
+    box-shadow: rbg(100 100 111 / 20%) 0px 7px 29px 0px;
     animation: ${scale} 0.5s linear;
   }
 `;

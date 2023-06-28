@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
@@ -26,6 +27,7 @@ function Home() {
   const [topSeries, setTopSeries] = useState();
   const [popularSeries, setPopularSeries] = useState();
   const [topPeople, setTopPeople] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getAllData() {
@@ -62,7 +64,9 @@ function Home() {
               <p>{movie.overview}</p>
 
               <ContainerButtons>
-                <Button red>Assista Agora</Button>
+                <Button red onClick={() => navigate(`/detalhe/${movie.id}`)}>
+                  Assista Agora
+                </Button>
                 <Button onClick={() => setShowModal(true)}>
                   Assista o Trailer
                 </Button>
