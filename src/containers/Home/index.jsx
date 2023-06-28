@@ -3,7 +3,13 @@ import { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Slider from '../../components/Slider';
-import api from '../../services/api';
+import {
+  getMovies,
+  getPopularSeries,
+  getTopMovies,
+  getTopPeople,
+  getTopSeries
+} from '../../services/getData';
 import { getImages } from '../../utils/getImages';
 import {
   Background,
@@ -22,51 +28,25 @@ function Home() {
   const [topPeople, setTopPeople] = useState();
 
   useEffect(() => {
-    async function getMovies() {
-      const {
-        data: { results }
-      } = await api.get('movie/popular');
-
-      setMovie(results[2]);
+    async function getAllData() {
+      Promise.all([
+        getMovies(),
+        getTopMovies(),
+        getTopSeries(),
+        getPopularSeries(),
+        getTopPeople()
+      ])
+        .then(([movie, topMovies, topSeries, popularSeries, topPeople]) => {
+          setMovie(movie);
+          setTopMovies(topMovies);
+          setTopSeries(topSeries);
+          setPopularSeries(popularSeries);
+          setTopPeople(topPeople);
+        })
+        .catch((err) => console.error(err));
     }
 
-    async function getTopMovies() {
-      const {
-        data: { results }
-      } = await api.get('movie/top_rated');
-
-      setTopMovies(results);
-    }
-
-    async function getTopSeries() {
-      const {
-        data: { results }
-      } = await api.get('/tv/top_rated');
-
-      setTopSeries(results);
-    }
-
-    async function getPopularSeries() {
-      const {
-        data: { results }
-      } = await api.get('/tv/popular');
-
-      setPopularSeries(results);
-    }
-
-    async function getTopPeople() {
-      const {
-        data: { results }
-      } = await api.get('/person/popular');
-
-      setTopPeople(results);
-    }
-
-    getTopPeople();
-    getPopularSeries();
-    getTopSeries();
-    getTopMovies();
-    getMovies();
+    getAllData();
   }, []);
 
   return (
