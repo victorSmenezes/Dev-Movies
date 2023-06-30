@@ -61,3 +61,54 @@ export const Cover = styled.div`
     animation: ${scale} 0.5s linear;
   }
 `;
+
+export const Info = styled.div`
+  padding: 20px;
+  width: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  p {
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+`;
+
+export const ContainerMovies = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+  }
+
+  h4 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  iframe {
+    border: none;
+  }
+`;
