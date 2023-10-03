@@ -64,7 +64,10 @@ function Home() {
               <p>{movie.overview}</p>
 
               <ContainerButtons>
-                <Button red onClick={() => navigate(`/detalhe/${movie.id}`)}>
+                <Button
+                  red
+                  onClick={() => navigate(`/detalhe-filme/${movie.id}`)}
+                >
                   Assista Agora
                 </Button>
                 <Button onClick={() => setShowModal(true)}>
@@ -81,10 +84,27 @@ function Home() {
           </Container>
         </Background>
       )}
-      {topMovies && <Slider info={topMovies} title={'Top Filmes'} />}
-      {topSeries && <Slider info={topSeries} title={'Top Series'} />}
+      {topMovies && (
+        <Slider
+          info={topMovies}
+          title={'Top Filmes'}
+          route={`/detalhe-filme/`}
+        />
+      )}
+      {topSeries && (
+        <Slider
+          info={topSeries}
+          title={'Top Series'}
+          serie={topSeries}
+          route={`/detalhe-serie/`}
+        />
+      )}
       {popularSeries && (
-        <Slider info={popularSeries} title={'Series Populares'} />
+        <Slider
+          info={popularSeries}
+          title={'Series Populares'}
+          route={`/detalhe-serie/`}
+        />
       )}
       {topPeople && <Slider info={topPeople} title={'Top Artistas'} />}
     </>
