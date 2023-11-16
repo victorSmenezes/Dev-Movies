@@ -36,10 +36,14 @@ export default function DetailMovies() {
           setMovieSimilar(similar);
         })
         .catch((err) => console.error(err));
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
 
     getAllData();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -64,7 +68,7 @@ export default function DetailMovies() {
                   <h4>{video.name}</h4>
                   <iframe
                     src={`https://www.youtube.com/embed/${video.key}`}
-                    title="Youtube Video Player"
+                    title="YouTube Video Player"
                     height="500px"
                     width="80%"
                   ></iframe>
@@ -72,7 +76,11 @@ export default function DetailMovies() {
               ))}
           </ContainerMovies>
           {movieSimilar && (
-            <Slider info={movieSimilar} title={'Filmes Similares'} />
+            <Slider
+              info={movieSimilar}
+              title={'Filmes Similares'}
+              route={`/detalhe-filme/`}
+            />
           )}
         </>
       )}

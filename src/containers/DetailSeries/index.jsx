@@ -36,10 +36,13 @@ export default function DetailSeries() {
           setSerieSimilar(similarSeries);
         })
         .catch((err) => console.error(err));
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
-
     getAllData();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -72,7 +75,11 @@ export default function DetailSeries() {
               ))}
           </ContainerMovies>
           {serieSimilar && (
-            <Slider info={serieSimilar} title={'Series Similares'} />
+            <Slider
+              info={serieSimilar}
+              title={'Series Similares'}
+              route={`/detalhe-serie/`}
+            />
           )}
         </>
       )}
