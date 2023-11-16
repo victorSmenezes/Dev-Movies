@@ -78,7 +78,7 @@ function Home() {
             <Poster>
               <img
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                alt="capa-do-filne"
+                alt="capa-do-filme"
               />
             </Poster>
           </Container>
@@ -106,7 +106,9 @@ function Home() {
           route={`/detalhe-serie/`}
         />
       )}
-      {topPeople && <Slider info={topPeople} title={'Top Artistas'} />}
+      {topPeople && (
+        <Slider info={topPeople} title={'Top Artistas'} route={false} />
+      )}
     </>
   );
 }

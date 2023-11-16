@@ -1,9 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
   margin-top: 30px;
   gap: 10px;
+  animation: ${slideIn} 1s ease-in-out;
 
   span {
     padding: 8px 18px;

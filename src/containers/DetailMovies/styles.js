@@ -10,6 +10,19 @@ const scale = keyframes`
     }
 `;
 
+const slideInBckTop = keyframes`
+  0% {
+    -webkit-transform: translateZ(700px) translateY(-300px);
+    transform: translateZ(700px) translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const Background = styled.div`
   background-image: url(${(props) => props.image});
   height: 50vh;
@@ -74,6 +87,7 @@ export const Info = styled.div`
     font-size: 50px;
     font-weight: 700;
     color: #ffffff;
+    animation: ${scale} 0.6s ease-in;
   }
 
   p {
@@ -81,6 +95,10 @@ export const Info = styled.div`
     color: #ffffff;
     margin-top: 20px;
     margin-bottom: 30px;
+
+    -webkit-animation: ${slideInBckTop} 1.6s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: ${slideInBckTop} 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 `;
 
