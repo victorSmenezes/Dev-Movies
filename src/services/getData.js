@@ -1,101 +1,177 @@
 import api from './api';
 
 export async function getMovies() {
-  const {
-    data: { results }
-  } = await api.get('movie/popular');
+  try {
+    const {
+      data: { results }
+    } = await api.get('movie/popular');
 
-  return results[0];
+    return results[0];
+  } catch (error) {
+    console.error('Rota: "movie/popular" - Erro ao buscar os filmes: ', error);
+  }
 }
 
 export async function getTopMovies() {
-  const {
-    data: { results }
-  } = await api.get('movie/top_rated');
+  try {
+    const {
+      data: { results }
+    } = await api.get('movie/top_rated');
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "movie/top_rated" - Erro ao buscar os top filmes: ',
+      error
+    );
+  }
 }
 
 export async function getTopSeries() {
-  const {
-    data: { results }
-  } = await api.get('/tv/top_rated');
+  try {
+    const {
+      data: { results }
+    } = await api.get('/tv/top_rated');
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "/tv/top_rated" - Erro ao buscar as top séries: ',
+      error
+    );
+  }
 }
 
 export async function getPopularSeries() {
-  const {
-    data: { results }
-  } = await api.get('/tv/popular');
+  try {
+    const {
+      data: { results }
+    } = await api.get('/tv/popular');
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "/tv/popular" - Erro ao buscar as séries populares: ',
+      error
+    );
+  }
 }
 
 export async function getTopPeople() {
-  const {
-    data: { results }
-  } = await api.get('/person/popular');
+  try {
+    const {
+      data: { results }
+    } = await api.get('/person/popular');
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "/person/popular" - Erro ao buscar atores populares: ',
+      error
+    );
+  }
 }
 
 export async function getMovieVideos(movieId) {
-  const {
-    data: { results }
-  } = await api.get(`movie/${movieId}/videos`);
+  try {
+    const {
+      data: { results }
+    } = await api.get(`movie/${movieId}/videos`);
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "movie/:Id/videos" - Erro ao buscar os trailers: ',
+      error
+    );
+  }
 }
 
 export async function getMovieCredits(movieId) {
-  const {
-    data: { cast }
-  } = await api.get(`movie/${movieId}/credits`);
+  try {
+    const {
+      data: { cast }
+    } = await api.get(`movie/${movieId}/credits`);
 
-  return cast;
+    return cast;
+  } catch (error) {
+    console.error('Rota: "movie/:Id/credits" - Erro ao buscar elenco: ', error);
+  }
 }
 
 export async function getMovieSimilar(movieId) {
-  const {
-    data: { results }
-  } = await api.get(`movie/${movieId}/similar`);
+  try {
+    const {
+      data: { results }
+    } = await api.get(`movie/${movieId}/similar`);
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "movie/:Id/similar" - Erro ao buscar filmes similares: ',
+      error
+    );
+  }
 }
 
 export async function getMovieById(movieId) {
-  const { data } = await api.get(`movie/${movieId}`);
+  try {
+    const { data } = await api.get(`movie/${movieId}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error('Rota: "movie/:Id" - Erro ao buscar filme: ', error);
+  }
 }
 
 export async function getSeriesById(serieId) {
-  const { data } = await api.get(`tv/${serieId}`);
+  try {
+    const { data } = await api.get(`tv/${serieId}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.error('Rota: "tv/:Id" - Erro ao buscar serie: ', error);
+  }
 }
 
 export async function getSerieVideos(serieId) {
-  const {
-    data: { results }
-  } = await api.get(`tv/${serieId}/videos`);
+  try {
+    const {
+      data: { results }
+    } = await api.get(`tv/${serieId}/videos`);
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "tv/:Id/videos" - Erro ao buscar os trailers: ',
+      error
+    );
+  }
 }
 
 export async function getSerieCredits(serieId) {
-  const {
-    data: { cast }
-  } = await api.get(`tv/${serieId}/credits`);
+  try {
+    const {
+      data: { cast }
+    } = await api.get(`tv/${serieId}/credits`);
 
-  return cast;
+    return cast;
+  } catch (error) {
+    console.error('Rota: "tv/:Id/credits" - Erro ao buscar elenco: ', error);
+  }
 }
 
 export async function getSerieSimilar(serieId) {
-  const {
-    data: { results }
-  } = await api.get(`tv/${serieId}/similar`);
+  try {
+    const {
+      data: { results }
+    } = await api.get(`tv/${serieId}/similar`);
 
-  return results;
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "tv/:Id/similar" - Erro ao buscar series similares: ',
+      error
+    );
+  }
 }
