@@ -12,6 +12,18 @@ export async function getMovies() {
   }
 }
 
+export async function getNowPlayingMovies() {
+  try {
+    const {
+      data: { results }
+    } = await api.get('movie/now_playing');
+
+    return results;
+  } catch (error) {
+    console.error('Rota: "movie/now_playing" - Erro ao buscar filmes: ', error);
+  }
+}
+
 export async function getTopMovies() {
   try {
     const {
@@ -24,6 +36,18 @@ export async function getTopMovies() {
       'Rota: "movie/top_rated" - Erro ao buscar os top filmes: ',
       error
     );
+  }
+}
+
+export async function getAiringTodaySeries() {
+  try {
+    const {
+      data: { results }
+    } = await api.get('/tv/airing_today');
+
+    return results;
+  } catch (error) {
+    console.error('Rota: "/tv/airing_today" - Erro ao buscar séries: ', error);
   }
 }
 

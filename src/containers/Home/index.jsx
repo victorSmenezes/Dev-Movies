@@ -5,7 +5,9 @@ import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import Slider from '../../components/Slider';
 import {
+  getAiringTodaySeries,
   getMovies,
+  getNowPlayingMovies,
   getPopularSeries,
   getTopMovies,
   getTopPeople,
@@ -23,7 +25,9 @@ import {
 function Home() {
   const [showModal, setShowModal] = useState(false);
   const [movie, setMovie] = useState();
+  const [recentMovies, setRecentMovies] = useState();
   const [topMovies, setTopMovies] = useState();
+  const [airingTodaySeries, setAiringTodaySeries] = useState();
   const [topSeries, setTopSeries] = useState();
   const [popularSeries, setPopularSeries] = useState();
   const [topPeople, setTopPeople] = useState();
@@ -33,18 +37,32 @@ function Home() {
     async function getAllData() {
       Promise.all([
         getMovies(),
+        getNowPlayingMovies(),
         getTopMovies(),
+        getAiringTodaySeries(),
         getTopSeries(),
         getPopularSeries(),
         getTopPeople()
       ])
-        .then(([movie, topMovies, topSeries, popularSeries, topPeople]) => {
-          setMovie(movie);
-          setTopMovies(topMovies);
-          setTopSeries(topSeries);
-          setPopularSeries(popularSeries);
-          setTopPeople(topPeople);
-        })
+        .then(
+          ([
+            movie,
+            recentMovies,
+            topMovies,
+            airingTodaySeries,
+            topSeries,
+            popularSeries,
+            topPeople
+          ]) => {
+            setMovie(movie);
+            setRecentMovies(recentMovies);
+            setTopMovies(topMovies);
+            setAiringTodaySeries(airingTodaySeries);
+            setTopSeries(topSeries);
+            setPopularSeries(popularSeries);
+            setTopPeople(topPeople);
+          }
+        )
         .catch((err) => console.error(err));
     }
 
@@ -84,6 +102,13 @@ function Home() {
           </Container>
         </Background>
       )}
+      {recentMovies && (
+        <Slider
+          info={recentMovies}
+          title={'Filmes Rolando agora 🔥'}
+          route={`/detalhe-filme/`}
+        />
+      )}
       {topMovies && (
         <Slider
           info={topMovies}
@@ -91,11 +116,17 @@ function Home() {
           route={`/detalhe-filme/`}
         />
       )}
+      {airingTodaySeries && (
+        <Slider
+          info={airingTodaySeries}
+          title={'Séries Saindo hoje 🔥'}
+          route={`/detalhe-serie/`}
+        />
+      )}
       {topSeries && (
         <Slider
           info={topSeries}
           title={'Top Series'}
-          serie={topSeries}
           route={`/detalhe-serie/`}
         />
       )}
