@@ -39,6 +39,21 @@ export async function getTopMovies() {
   }
 }
 
+export async function getMoviesUpcoming() {
+  try {
+    const {
+      data: { results }
+    } = await api.get('movie/upcoming');
+
+    return results;
+  } catch (error) {
+    console.error(
+      'Rota: "movie/upcoming" - Erro ao buscar os filmes "vindo ai"": ',
+      error
+    );
+  }
+}
+
 export async function getAiringTodaySeries() {
   try {
     const {
@@ -73,6 +88,21 @@ export async function getPopularSeries() {
     } = await api.get('/tv/popular');
 
     return results;
+  } catch (error) {
+    console.error(
+      'Rota: "/tv/popular" - Erro ao buscar as séries populares: ',
+      error
+    );
+  }
+}
+
+export async function getSeries() {
+  try {
+    const {
+      data: { results }
+    } = await api.get('/tv/popular');
+
+    return results[0];
   } catch (error) {
     console.error(
       'Rota: "/tv/popular" - Erro ao buscar as séries populares: ',
