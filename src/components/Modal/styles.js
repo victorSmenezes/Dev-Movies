@@ -24,6 +24,11 @@ export const Container = styled.div`
   iframe {
     border: none;
     max-height: 500px;
+
+    @media (max-width: 430px) {
+      width: 100%;
+      height: 300px;
+    }
   }
   span {
     color: #eeeeee;
@@ -39,5 +44,14 @@ export const Container = styled.div`
       text-decoration: none;
       cursor: pointer;
     }
+
+    @media (max-width: 430px) {
+      bottom: 88%;
+    }
+  }
+
+  @media (max-width: 430px) {
+    width: 85%;
+    padding: 1px;
   }
 `;

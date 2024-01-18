@@ -15,6 +15,19 @@ export const Container = styled.div`
 
   img {
     width: 25%;
+
+    @media (max-width: 430px) {
+      width: 50%;
+      padding-bottom: 8px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    width: auto;
+    height: 50px;
+    padding: 14px 10px;
+    justify-content: center;
+    flex-direction: column;
   }
 `;
 
@@ -22,6 +35,10 @@ export const Menu = styled.ul`
   display: flex;
   list-style: none;
   gap: 50px;
+
+  @media (max-width: 430px) {
+    gap: 10px;
+  }
 `;
 
 export const Li = styled.li`
@@ -49,5 +66,8 @@ export const Li = styled.li`
 
   &:hover::after {
     width: 100%;
+  }
+  @media (max-width: 430px) {
+    font-size: 22px;
   }
 `;
