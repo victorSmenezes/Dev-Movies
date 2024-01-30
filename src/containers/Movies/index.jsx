@@ -48,6 +48,10 @@ function Movies() {
     getAllData();
   }, []);
 
+  const limitText = (text) => {
+    return text.slice(0, 400) + '...';
+  };
+
   return (
     <>
       {movie && (
@@ -58,7 +62,12 @@ function Movies() {
           <Container>
             <Info>
               <h1>{movie.title}</h1>
-              <p>{movie.overview}</p>
+
+              <p>
+                {movie.overview.length > 500
+                  ? limitText(movie.overview)
+                  : movie.overview}
+              </p>
 
               <ContainerButtons>
                 <Button

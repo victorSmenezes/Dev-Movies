@@ -48,6 +48,11 @@ function Series() {
     getAllData();
   }, []);
   console.log(series);
+
+  const limitText = (text) => {
+    return text.slice(0, 400) + '...';
+  };
+
   return (
     <>
       {series && (
@@ -58,7 +63,11 @@ function Series() {
           <Container>
             <Info>
               <h1>{series.name}</h1>
-              <p>{series.overview}</p>
+              <p>
+                {series.overview.length > 500
+                  ? limitText(series.overview)
+                  : series.overview}
+              </p>
 
               <ContainerButtons>
                 <Button
