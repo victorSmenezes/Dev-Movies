@@ -51,11 +51,6 @@ export const Background = styled.div`
     height: 140px;
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   }
-
-  @media (max-width: 430px) {
-    background-position: center;
-    background-size: cover;
-  }
 `;
 
 export const Container = styled.div`
