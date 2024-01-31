@@ -9,6 +9,10 @@ export const Container = styled.div`
     color: #ffffff;
     font-size: 24px;
     margin: 50px 0 20px 20px;
+
+    @media (max-width: 430px) {
+      font-size: 20px;
+    }
   }
 
   .swiper-wrapper {

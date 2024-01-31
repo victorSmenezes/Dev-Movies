@@ -12,10 +12,19 @@ export const Container = styled.div`
     border-radius: 30px;
     width: 300px;
     height: 100%;
+
+    @media (max-width: 430px) {
+      width: 220px;
+      border-radius: 15px;
+    }
   }
 
   h3 {
     color: #ffffff;
     margin-top: 15px;
+
+    @media (max-width: 430px) {
+      font-size: 15px;
+    }
   }
 `;
