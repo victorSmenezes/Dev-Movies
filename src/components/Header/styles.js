@@ -11,6 +11,8 @@ export const Container = styled.div`
   padding: 12px 50px;
   background-color: ${(props) =>
     props.changeBackground ? '#000' : 'transparent'};
+  border-bottom: ${(props) =>
+    props.changeBackground ? '4px dashed #189b20' : 'none'};
   transition: background-color 0.6s ease-in-out;
 
   img {
@@ -24,8 +26,8 @@ export const Container = styled.div`
 
   @media (max-width: 430px) {
     width: auto;
-    height: 50px;
-    padding: 14px 10px;
+    height: 110px;
+    padding: 16px 10px;
     justify-content: center;
     flex-direction: column;
   }
@@ -54,7 +56,7 @@ export const Li = styled.li`
 
   &::after {
     content: '';
-    height: 3px;
+    height: 4px;
     width: ${(props) => (props.isActive ? '100%' : 0)};
     background-color: #189b20;
     position: absolute;
@@ -62,11 +64,18 @@ export const Li = styled.li`
     left: 50%;
     transform: translateX(-50%);
     transition: width 0.5s ease-in-out;
+    border: ${(props) => (props.isActive ? '1px dotted #5036ac' : 'none')};
+
+    @media (max-width: 430px) {
+      height: 3px;
+    }
   }
 
   &:hover::after {
     width: 100%;
+    border: 1px dotted #5036ac;
   }
+
   @media (max-width: 430px) {
     font-size: 22px;
   }
