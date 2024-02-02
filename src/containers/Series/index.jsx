@@ -47,7 +47,6 @@ function Series() {
 
     getAllData();
   }, []);
-  console.log(series);
 
   const limitText = (text) => {
     return text.slice(0, 400) + '...';
