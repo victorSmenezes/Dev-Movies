@@ -63,8 +63,7 @@ export const Container = styled.div`
   @media (max-width: 430px) {
     flex-direction: column-reverse;
     width: 98%;
-    justify-content: center;
-    margin-top: 20%;
+    justify-content: end;
   }
 `;
 
@@ -126,8 +125,7 @@ export const Poster = styled.div`
     animation: ${scale} 0.5s linear;
 
     @media (max-width: 430px) {
-      width: 265px;
-      border-radius: 25px;
+      display: none;
     }
   }
 `;
