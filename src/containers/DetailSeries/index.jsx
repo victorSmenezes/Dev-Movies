@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import BackButton from '../../components/BackButton';
 import Credits from '../../components/Credits';
 import Slider from '../../components/Slider';
 import SpanGenres from '../../components/SpanGenres';
@@ -36,16 +37,15 @@ export default function DetailSeries() {
           setSerieSimilar(similarSeries);
         })
         .catch((err) => console.error(err));
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     getAllData();
   }, [id]);
 
   return (
     <>
+      <BackButton />
       {serie && (
         <>
           <Background image={getImages(serie.backdrop_path)} />

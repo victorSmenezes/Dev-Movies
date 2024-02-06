@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import BackButton from '../../components/BackButton';
 import Credits from '../../components/Credits';
 import Slider from '../../components/Slider';
 import SpanGenres from '../../components/SpanGenres';
@@ -36,10 +37,8 @@ export default function DetailMovies() {
           setMovieSimilar(similar);
         })
         .catch((err) => console.error(err));
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     getAllData();
@@ -47,6 +46,7 @@ export default function DetailMovies() {
 
   return (
     <>
+      <BackButton />
       {movie && (
         <>
           <Background image={getImages(movie.backdrop_path)} />
