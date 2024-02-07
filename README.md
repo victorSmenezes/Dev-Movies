@@ -71,9 +71,9 @@
 > Deslize e veja mais filmes e séries.
 
 <div align="center" style="display: inline-block">
-<img width="746" alt="dev-movies-slider" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/a5f5956bc20585924af19b65bf98ee763dca48c6/src/assets/Slider.png />
+<img width="816" alt="dev-movies-slider" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/a5f5956bc20585924af19b65bf98ee763dca48c6/src/assets/Slider.png />
   
-<img width="746"  alt="dev-movies-slider" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/SliderSeries.png />
+<img width="816"  alt="dev-movies-slider" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/SliderSeries.png />
 </div>
 
 <br />
