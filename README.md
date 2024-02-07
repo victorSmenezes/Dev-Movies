@@ -18,6 +18,8 @@
 
 # 🎥 Section's
 
+<div align="center">
+  
 ### HOME
 >
 <div style="display: inline-block">
@@ -46,6 +48,8 @@
 <img width="146" height="300" alt="dev-movies-series" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/PageSeriesMob.png />
 </div>
 
+</div>
+
 ## 
 
 # 🎬 Functionalities
@@ -54,7 +58,7 @@
 
 > Aperte 'Assista o Trailer' e veja o trailer do filme de capa.
 
-<div style="display: inline-block">
+<div align="center" style="display: inline-block">
 <img width="516" alt="dev-movies-modal" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/ModalHome.png />
   
 <img width="146" height="300"  alt="dev-movies-modal-mob" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/ModalHomeMob.png />
@@ -66,10 +70,10 @@
 
 > Deslize e veja mais filmes e séries.
 
-<div style="display: inline-block">
-<img width="426" alt="dev-movies-slider" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/a5f5956bc20585924af19b65bf98ee763dca48c6/src/assets/Slider.png />
+<div align="center" style="display: inline-block">
+<img width="516" alt="dev-movies-slider" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/a5f5956bc20585924af19b65bf98ee763dca48c6/src/assets/Slider.png />
   
-<img width="426"  alt="dev-movies-slider" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/SliderSeries.png />
+<img width="516"  alt="dev-movies-slider" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/57709eb111abe7167521148c3af2fbfb92393a4b/src/assets/SliderSeries.png />
 </div>
 
 <br />
@@ -78,7 +82,7 @@
 
 > Clique em um filme ou série e veja detalhes sobre, mais trailers, gêneros, principais atores, filmes/séries similares.
 
-<div style="display: inline-block">
+<div align="center" style="display: inline-block">
 <img width="516" alt="dev-movies-detail" margin-right="35" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/c047afd6a9e3731d327652a051c199063a0acbe9/src/assets/DetailSeries.png />
   
 <img width="146" height="300"  alt="dev-movies-detail-mob" src=https://raw.githubusercontent.com/victorSmenezes/Dev-Movies/c047afd6a9e3731d327652a051c199063a0acbe9/src/assets/DetailSeriesMob.png />
@@ -90,7 +94,7 @@
 
 Este projeto foi desenvolvido usando as seguintes tecnologias e ferramentas:
 
-- ReactJs
+- React
 - React-Icons
 - React-Router-Dom
 - Styled-Components
